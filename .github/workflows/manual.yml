@@ -22,6 +22,9 @@ on:
 jobs:
   # This workflow contains a single job called "greet"
   greet:
+    
+    environment: "Dev"
+    
     # The type of runner that the job will run on
     runs-on: 
       labels: ["cae-front-dev-we"]
