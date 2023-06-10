@@ -13,6 +13,8 @@ jobs:
           node-version: '16'
       - name: "Execute script of webhook setup"
         uses: actions/github-script@v6
+        env:
+          WEBHOOK_SELF_HOSTED_RUNNER: '${{ screts.WEBHOOK_SELF_HOSTED_RUNNER }}'
         with:
           script: |
             const { default: script } = await import('${{ github.workspace }}/src/setup-webhook.js')
