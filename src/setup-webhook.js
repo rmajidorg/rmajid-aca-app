@@ -1,5 +1,5 @@
 const Script = async ({github, context, core}, repoName) => {
-  await githubClient.rest.repos.createWebhook({
+  await github.rest.repos.createWebhook({
         owner: 'TotalEnergiesCode',
         repo: repoName,
         config: {
