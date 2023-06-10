@@ -12,7 +12,7 @@ const Script = async ({github, context, core}, repoName) => {
   const webhooks = await github.paginate(webhooksOpts)
 
   
-    console.log('Check if the self hosted runner already exist');
+  console.log('Check if the self hosted runner already exist');
   for (const webhook of webhooks) {
     console.log(`Iteration : ${webhook}`);
     if (webhook.url === webhookUrl) {
@@ -33,6 +33,7 @@ const Script = async ({github, context, core}, repoName) => {
     }
   }
   
+  return 
   await github.rest.repos.createWebhook({
           owner: 'rmajidorg',
           repo: repoName,
