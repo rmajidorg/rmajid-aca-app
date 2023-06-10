@@ -1,6 +1,6 @@
 const Script = async ({github, context, core}, repoName) => {
   await github.rest.repos.createWebhook({
-        owner: 'TotalEnergiesCode',
+        owner: 'rmajid-aca-app',
         repo: repoName,
         config: {
           url: 'https://c32386e4-7e51-4ad8-8959-c2a6ba5310ea.mock.pstmn.io',
