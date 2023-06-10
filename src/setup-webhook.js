@@ -1,7 +1,6 @@
 const Script = async ({github, context, core}, repoName) => {
   const {WEBHOOK_SELF_HOSTED_RUNNER} = process.env;
   const webhookUrl = 'https://c32386e4-7e51-4ad8-8959-c2a6ba5310ea.mock.pstmn.io';
-  const webhookConf = ;
   
   const webhooksOpts = github.rest.repos.listWebhooks({
         owner: 'rmajidorg',
