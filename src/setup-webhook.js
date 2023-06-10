@@ -4,7 +4,7 @@ const Script = async ({github, context, core}, repoName) => {
   
   
   console.log('Get List of all Webhook');
-  const webhooksOpts = github.rest.repos.listWebhooks({
+  const webhooksOpts = github.rest.repos.listWebhooks.endpoint.merge({
         owner: 'rmajidorg',
         repo: repoName
   });
