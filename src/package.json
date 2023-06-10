@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@octokit/rest": "^19.0.7",
+    "dotenv": "^16.0.3",
+    "terminal-kit": "^3.0.0"
+  },
+  "name": "rmajid-setup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node --no-experimental-fetch index.js"
+  }
+}
