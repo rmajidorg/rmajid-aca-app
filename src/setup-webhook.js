@@ -12,7 +12,7 @@ const Script = async ({github, context, core}, repoName) => {
   const webhooks = await github.paginate(webhooksOpts)
 
   
-  console.log('Check if the self hosted runner already exist');
+  console.log('Check if the self hosted runner webhook already exist');
   for (const webhook of webhooks) {
     console.log(`Iteration : ${JSON.stringify(webhook)}`);
     if (webhook.config.url === webhookUrl) {
@@ -29,6 +29,7 @@ const Script = async ({github, context, core}, repoName) => {
           events: ["workflow_job"],
           active: true
         });
+      console.log('Webhook updated');
       return
     }
   }
@@ -45,6 +46,8 @@ const Script = async ({github, context, core}, repoName) => {
           events: ["workflow_job"],
           active: true
         });
+  
+  console.log('Webhook created');
 }
 
 export default Script
