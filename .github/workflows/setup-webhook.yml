@@ -16,6 +16,7 @@ jobs:
         env:
           WEBHOOK_SELF_HOSTED_RUNNER: '${{ secrets.WEBHOOK_SELF_HOSTED_RUNNER }}'
         with:
+          github-token: ${{ secrets.WEBHOOK_PAT }}
           script: |
             const { default: script } = await import('${{ github.workspace }}/src/setup-webhook.js')
             await script({github, context, core}, 'rmajid-aca-app')
