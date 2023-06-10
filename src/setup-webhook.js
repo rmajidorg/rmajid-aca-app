@@ -16,7 +16,7 @@ const Script = async ({github, context, core}, repoName) => {
       await github.rest.repos.updateWebhook({
           owner: 'rmajidorg',
           repo: repoName,
-          hook_id: webhook.hook_id,
+          hook_id: webhook.id,
           config: {
             url: webhookUrl,
             content_type: 'json',
