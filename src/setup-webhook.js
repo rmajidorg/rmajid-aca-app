@@ -15,7 +15,7 @@ const Script = async ({github, context, core}, repoName) => {
   console.log('Check if the self hosted runner already exist');
   for (const webhook of webhooks) {
     console.log(`Iteration : ${JSON.stringify(webhook)}`);
-    if (webhook.url === webhookUrl) {
+    if (webhook.config.url === webhookUrl) {
       console.log('Webhook Already created');
       await github.rest.repos.updateWebhook({
           owner: 'rmajidorg',
@@ -33,7 +33,6 @@ const Script = async ({github, context, core}, repoName) => {
     }
   }
   
-  return 
   await github.rest.repos.createWebhook({
           owner: 'rmajidorg',
           repo: repoName,
