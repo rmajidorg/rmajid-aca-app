@@ -15,6 +15,8 @@ jobs:
         uses: actions/github-script@v6
         env:
           WEBHOOK_SELF_HOSTED_RUNNER: '${{ secrets.WEBHOOK_SELF_HOSTED_RUNNER }}'
+          WEBHOOK_HANDLE_JOB_QUEUED_AUTH_FUNC: '${{ secrets.WEBHOOK_HANDLE_JOB_QUEUED_AUTH_FUNC }}'
+          WEBHOOK_HANDLE_JOB_QUEUED_URL: '${{ vars.WEBHOOK_HANDLE_JOB_QUEUED_URL }}'
         with:
           github-token: ${{ secrets.WEBHOOK_PAT }}
           script: |
